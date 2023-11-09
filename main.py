@@ -16,7 +16,7 @@ async def startup_event():
 # Root
 @app.get("/")
 async def root():
-    return {"message": "AQUINAS NETWORK Backend Technical Test"}
+    return {"message": "Backend Technical Test"}
 
 # Get all users from the database (Public API: JSONPLACEHOLDER)
 @app.get("/api/data")
