@@ -1,5 +1,13 @@
 version: '3'
 services:
+  db:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+
   app:
     build:
       context: ./  # Path to the folder with the Dockerfile
@@ -10,10 +18,3 @@ services:
       - db
     env_file:
       - ./mydb.env  # Path to the file with environment variables
-  db:
-    image: mysql:latest
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb

@@ -10,8 +10,6 @@ app = FastAPI()
 # Startup event to create database and initialize
 @app.on_event("startup")
 async def startup_event():
-    import time
-    time.sleep(10)  # Wait 10 seconds for the database to start
     create_database()
     initialize_db()
 
